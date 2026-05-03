@@ -78,7 +78,7 @@ body[data-theme="indigo"] {
   }
 
   #root {
-    @apply min-h-screen w-full;
+    @apply w-full min-h-screen;
   }
 }
 
@@ -106,21 +106,21 @@ body[data-theme="indigo"] {
 @layer components {
   /* Direct definitions for compatibility */
   .glass {
-    @apply backdrop-blur-xl border rounded-2xl;
+    @apply border backdrop-blur-xl rounded-2xl;
     background-color: var(--color-glass-bg) !important;
     border-color: var(--color-glass-border) !important;
     box-shadow: 0 10px 30px -10px var(--shadow-color) !important;
   }
 
   .glass-card {
-    @apply backdrop-blur-xl border rounded-3xl transition-all duration-300 hover:border-indigo-500/30;
+    @apply transition-all duration-300 border backdrop-blur-xl rounded-3xl hover:border-indigo-500/30;
     background-color: var(--color-glass-bg) !important;
     border-color: var(--color-glass-border) !important;
     box-shadow: 0 10px 30px -10px var(--shadow-color) !important;
   }
 
   .glass-input {
-    @apply bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all placeholder:text-slate-500;
+    @apply px-5 py-4 text-white transition-all border bg-white/5 border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 placeholder:text-slate-500;
   }
 
   .btn-primary {
@@ -129,15 +129,14 @@ body[data-theme="indigo"] {
   }
 
   .btn-secondary {
-    @apply bg-white/5 text-slate-300 font-semibold px-8 py-4 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer;
-  }
-    @apply bg-white/5 text-slate-300 font-semibold px-8 py-4 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer;
+    @apply flex items-center justify-center gap-2 px-8 py-4 font-semibold transition-all duration-300 border cursor-pointer bg-white/5 text-slate-300 rounded-2xl border-white/10 hover:bg-white/10;
   }
 
   .status-badge {
     @apply px-4 py-1.5 rounded-full text-xs font-bold border flex items-center gap-1.5 w-fit;
   }
 }
+
 
 /* Animations */
 @keyframes float {
@@ -169,11 +168,11 @@ body[data-theme="indigo"] {
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-indigo-600;
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-600;
 }
 
 .nav-link {
-  @apply relative py-2 text-slate-400 hover:text-white transition-colors duration-300;
+  @apply relative py-2 transition-colors duration-300 text-slate-400 hover:text-white;
 }
 
 .nav-link::after {
@@ -199,7 +198,7 @@ body[data-theme="indigo"] {
   @apply bg-[#0b0f1a];
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+  @apply transition-colors rounded-full bg-slate-800 hover:bg-slate-700;
 }
 
 /* Dropdown Styling */
